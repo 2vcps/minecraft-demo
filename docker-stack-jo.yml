@@ -1,0 +1,25 @@
+version: "3"
+services:
+
+  mc:
+    image: itzg/minecraft-server
+    ports:
+      - "25565:25565"
+    networks:
+      - frontend
+    environment:
+      EULA: TRUE
+    volumes:
+      - mcdata:/data
+    deploy:
+      update_config:
+        parallelism: 1
+        delay: 10s
+      restart_policy:
+        condition: on-failure
+networks:
+  frontend:
+volumes:
+  mcdata:
+    driver: purestorage/docker-plugin:1.0
+    options: size=9GiB
