@@ -21,4 +21,4 @@ networks:
 volumes:
   mcdata:
     driver: purestorage/docker-plugin:1.0
-    option: size=9GiB
+      - size=9GiB
