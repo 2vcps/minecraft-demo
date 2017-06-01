@@ -1,13 +1,13 @@
 version: "3"
 services:
   mc:
-    image: itzg/minecraft-server
+    image: itzg/minecraft-server:latest
     ports:
       - "25565:25565"
     networks:
       - frontend
     environment:
-      EULA: ""
+      EULA: "TRUE"
     volumes:
       - mcdata:/data
     deploy:
