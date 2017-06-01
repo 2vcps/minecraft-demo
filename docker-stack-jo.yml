@@ -7,7 +7,7 @@ services:
     networks:
       - frontend
     environment:
-      EULA: "TRUE"
+      EULA: ""
     volumes:
       - mcdata:/data
     deploy:
